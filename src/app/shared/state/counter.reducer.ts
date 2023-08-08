@@ -18,7 +18,7 @@ const _counterReducer = createReducer(initialState,
     on(reset, (state) => {
         return {
             ...state,
-            counter: state.counter
+            counter: 0
         }
     })
 )

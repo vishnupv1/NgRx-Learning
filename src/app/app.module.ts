@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -11,6 +11,7 @@ import { counterReducer } from './shared/state/counter.reducer';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './Material.module';
 import { CustomcounterComponent } from './components/customcounter/customcounter.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CustomcounterComponent } from './components/customcounter/customcounter
     MaterialModule,
     StoreModule.forRoot({ counter: counterReducer }),
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [],
   bootstrap: [AppComponent]

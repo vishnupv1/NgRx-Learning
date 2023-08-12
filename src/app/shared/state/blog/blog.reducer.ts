@@ -11,6 +11,7 @@ const _blogReducer = createReducer(blogState,
     }),
     on(addBlog, (state, action) => {
         const _blog = { ...action.bloginput }
+        _blog.id = state.bloglist.length + 1
         return {
             ...state,
             bloglist: [...state.bloglist, _blog]

@@ -4,6 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { blogModel } from 'src/app/shared/state/blog/blog.model';
 import { Store } from '@ngrx/store';
 import { AppStateModel } from 'src/app/shared/state/Global/appstate.model';
+import { addBlog } from 'src/app/shared/state/blog/blog.action';
 
 
 @Component({
@@ -27,6 +28,8 @@ export class AddblogComponent {
         title: this.blogform.value.title as string,
         description: this.blogform.value.description as string
       }
+      this.store.dispatch(addBlog({ bloginput: _bloginput }))
+      this.closePopup()
     }
   }
   blogform = this.builder.group({
@@ -34,4 +37,5 @@ export class AddblogComponent {
     title: this.builder.control('', Validators.required),
     description: this.builder.control('', Validators.required)
   })
+
 }

@@ -14,9 +14,10 @@ import { AddblogComponent } from '../addblog/addblog.component';
   styleUrls: ['./blog.component.css']
 })
 export class BlogComponent implements OnInit {
-  constructor(private store: Store<AppStateModel>, private dialog: MatDialog) {
-
-  }
+  constructor(
+    private store: Store<AppStateModel>,
+    private dialog: MatDialog,
+    ) { }
   blogList!: blogModel[]
   ngOnInit(): void {
     this.store.select(getBlog).subscribe(item => {
@@ -34,4 +35,5 @@ export class BlogComponent implements OnInit {
       width: '40%'
     })
   }
+ 
 }

@@ -1,6 +1,6 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,7 +30,8 @@ import { AddblogComponent } from './components/addblog/addblog.component';
     BlogComponent,
     CounterComponent,
     MenuheaderComponent,
-    AddblogComponent
+    AddblogComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -39,6 +40,7 @@ import { AddblogComponent } from './components/addblog/addblog.component';
     StoreModule.forRoot(AppState),
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [],

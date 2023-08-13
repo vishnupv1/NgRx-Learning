@@ -28,9 +28,9 @@ export class BlogComponent implements OnInit {
   }
 
   addBlog() {
-    this.OpenPopup(0, 'Add Blog')
+    this.Openpopup(0,'Add Blog')
   }
-  OpenPopup(id: any, title: any, isedit = false) {
+  Openpopup(id: any, title: any, isedit = false) {
     this.dialog.open(AddblogComponent, {
       width: '40%',
       data: {
@@ -41,8 +41,7 @@ export class BlogComponent implements OnInit {
     })
   }
   updateBlog(id: number) {
-    this.OpenPopup(0, 'Edit Blog', true)
-
+    this.Openpopup(0, 'Edit Blog', true)
   }
 
 }

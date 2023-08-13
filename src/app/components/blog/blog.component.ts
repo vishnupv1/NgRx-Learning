@@ -17,7 +17,7 @@ export class BlogComponent implements OnInit {
   constructor(
     private store: Store<AppStateModel>,
     private dialog: MatDialog,
-    ) { }
+  ) { }
   blogList!: blogModel[]
   ngOnInit(): void {
     this.store.select(getBlog).subscribe(item => {
@@ -28,12 +28,21 @@ export class BlogComponent implements OnInit {
   }
 
   addBlog() {
-    this.Openpopup()
+    this.OpenPopup(0, 'Add Blog')
   }
-  Openpopup() {
+  OpenPopup(id: any, title: any, isedit = false) {
     this.dialog.open(AddblogComponent, {
-      width: '40%'
+      width: '40%',
+      data: {
+        id: id,
+        title: title,
+        isedit: isedit
+      }
     })
   }
- 
+  updateBlog(id: number) {
+    this.OpenPopup(0, 'Edit Blog', true)
+
+  }
+
 }

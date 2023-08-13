@@ -1,0 +1,6 @@
+{
+  "blogs": [
+    { "id": 1, "title": "Angular", "description": "powered by Google" },
+    { "id": 2, "title": "React", "description": "powered by Facebook" }
+  ]
+}
